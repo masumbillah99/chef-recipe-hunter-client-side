@@ -1,10 +1,13 @@
 import "flowbite";
 import { Link } from "react-router-dom";
-import {FaGoogle, FaGithub}  from "react-icons/fa";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
   return (
     <div className="max-w-screen-xl mx-auto mt-32 pb-7">
+      <h1 className="mb-7 text-2xl font-bold text-center underline">
+        Login Page
+      </h1>
       <form>
         <div className="relative z-0 w-3/4 md:w-1/2 mb-6 mx-auto group">
           <input
@@ -55,21 +58,25 @@ const Login = () => {
           </Link>
         </p>
         <div className="flex items-center justify-center mx-auto my-3">
-          <hr className="border-gray-500 border w-1/4" />
+          <hr className="border-gray-500 border w-1/5" />
           <span className="mx-3">or</span>
-          <hr className="border-gray-500 border w-1/4" />
+          <hr className="border-gray-500 border w-1/5" />
         </div>
         <div>
           <button
             type="button"
             className="hover:text-white border border-gray-500 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center mr-2 mb-2 w-3/4 md:w-1/2"
-          > <FaGoogle className="inline me-2" />
+          >
+            {" "}
+            <FaGoogle className="inline me-2" />
             Continue with Google
           </button>
           <button
             type="button"
             className="hover:text-white border border-gray-500 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center mr-2 mb-2 w-3/4 md:w-1/2"
-          > <FaGithub className="inline me-2" />
+          >
+            {" "}
+            <FaGithub className="inline me-2" />
             Continue with Github
           </button>
         </div>
