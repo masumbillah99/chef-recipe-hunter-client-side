@@ -1,11 +1,12 @@
 import { HandThumbUpIcon } from "@heroicons/react/24/solid";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
+import Spinner from "../../Shared/Spinner/Spinner";
 import RecipeInfo from "./RecipeInfo";
 
 const ChefDetails = () => {
-  const id = useParams();
+  //   const id = useParams();
   const data = useLoaderData();
-  //   console.log(data);
+  const navigation = useNavigation();
   const {
     chef_name,
     chef_picture,
@@ -15,6 +16,10 @@ const ChefDetails = () => {
     description,
     recipe_info,
   } = data;
+
+  if (navigation.state === "loading") {
+    return <Spinner />;
+  }
 
   return (
     <div className="">

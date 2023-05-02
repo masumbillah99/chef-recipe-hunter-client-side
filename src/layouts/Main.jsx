@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Home from "../pages/Home/Home/Home";
 import Footer from "../pages/Shared/Footer/Footer";
 import Header from "../pages/Shared/Header/Header";
@@ -17,7 +18,7 @@ const Main = () => {
           <RightNav />
         </div>
       </div>
-
+      <ToastContainer />
       <Footer />
     </>
   );
