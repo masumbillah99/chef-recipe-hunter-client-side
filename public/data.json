@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "chef_picture": "https://i.ibb.co/vCNpxDB/person-2.png",
+        "chef_name": "John Smith",
+        "years_of_experience": 10,
+        "num_of_recipes": 50,
+        "likes": 1000
+    },
+    {
+        "id": 2,
+        "chef_picture": "https://i.ibb.co/vCNpxDB/person-2.png",
+        "chef_name": "Emily Jones",
+        "years_of_experience": 5,
+        "num_of_recipes": 30,
+        "likes": 500
+    },
+    {
+        "id": 3,
+        "chef_picture": "https://i.ibb.co/vCNpxDB/person-2.png",
+        "chef_name": "David Lee",
+        "years_of_experience": 15,
+        "num_of_recipes": 80,
+        "likes": 1200
+    },
+    {
+        "id": 4,
+        "chef_picture": "https://i.ibb.co/vCNpxDB/person-2.png",
+        "chef_name": "Sarah Johnson",
+        "years_of_experience": 8,
+        "num_of_recipes": 40,
+        "likes": 700
+    },
+    {
+        "id": 5,
+        "chef_picture": "https://i.ibb.co/vCNpxDB/person-2.png",
+        "chef_name": "Michael Brown",
+        "years_of_experience": 20,
+        "num_of_recipes": 100,
+        "likes": 2000
+    },
+    {
+        "id": 6,
+        "chef_picture": "https://i.ibb.co/vCNpxDB/person-2.png",
+        "chef_name": "Emma Davis",
+        "years_of_experience": 3,
+        "num_of_recipes": 20,
+        "likes": 200
+    },
+    {
+        "id": 7,
+        "chef_picture": "https://i.ibb.co/vCNpxDB/person-2.png",
+        "chef_name": "Daniel Wilson",
+        "years_of_experience": 12,
+        "num_of_recipes": 60,
+        "likes": 900
+    },
+    {
+        "id": 8,
+        "chef_picture": "https://i.ibb.co/vCNpxDB/person-2.png",
+        "chef_name": "Mia Rodriguez",
+        "years_of_experience": 6,
+        "num_of_recipes": 35,
+        "likes": 450
+    }
+]
