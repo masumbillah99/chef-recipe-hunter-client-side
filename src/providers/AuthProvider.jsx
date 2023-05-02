@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GithubAuthProvider,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -15,7 +16,8 @@ export const AuthContext = createContext(null);
 
 // initialize firebase authentication
 const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -63,7 +65,12 @@ const AuthProvider = ({ children }) => {
 
   // google sign in
   const googleSignIn = () => {
-    return signInWithPopup(auth, provider);
+    return signInWithPopup(auth, googleProvider);
+  };
+
+  // github sign in
+  const githubSignIn = () => {
+    return signInWithPopup(auth, githubProvider);
   };
 
   const authInfo = {
@@ -74,6 +81,7 @@ const AuthProvider = ({ children }) => {
     logOutUser,
     updateUserProfile,
     googleSignIn,
+    githubSignIn,
   };
 
   return (
@@ -84,3 +92,22 @@ const AuthProvider = ({ children }) => {
 };
 
 export default AuthProvider;
+
+/** 
+ * for github authentication
+  ---steps in firebase > sign in method > github
+    1. enable github sign in method
+    2. paste client_id from github application
+    3. paste client_secret
+    4. save
+
+    ---steps in github
+    1. go your github account > settings > developer settings
+    2. new github application
+    3. give a unique name
+    4. description
+    5. your website homepage URL
+    6. callback URL from firebase > sign in method > Github
+    7. copy client id
+    8. click "Generate a new client secret" button & copy it
+*/
