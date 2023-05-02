@@ -49,7 +49,7 @@ const ChefDetails = () => {
       </div>
       <div className="mt-7">
         <h2 className="text-4xl font-bold">Here are some of my Recipe</h2>
-        <hr className="my-2 w-1/2 border-2 border-indigo-800 rounded" />
+        <hr className="mt-2 mb-8 w-3/4 border-2 border-indigo-800 rounded" />
         {recipe_info.map((info) => (
           <RecipeInfo key={info._id} info={info} />
         ))}
