@@ -5,7 +5,7 @@ import { FaFacebook, FaYoutube, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-white rounded-lg shadow dark:bg-gray-900 mt-32">
+    <footer className="bg-gray-700 text-white rounded-lg shadow dark:bg-gray-900 mt-32">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mx-3 lg:mx-0">
           <div>
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="flex items-center gap-3">
-          <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400 md:mx-auto">
+          <span className="block text-sm text-gray-300 sm:text-center dark:text-gray-400 md:mx-auto">
             © 2023 Chef Master. All Rights Reserved.
           </span>
           <div className="flex space-x-6 sm:justify-center md:ms-auto">

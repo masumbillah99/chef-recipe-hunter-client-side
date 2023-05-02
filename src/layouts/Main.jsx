@@ -9,14 +9,16 @@ const Main = () => {
     <div>
       <Header />
       <Home />
-      <div className="grid lg:grid-cols-3">
+
+      <div className="max-w-screen-xl mx-auto grid lg:grid-cols-3 gap-3 my-10">
         <div className="col-span-2">
           <Outlet />
         </div>
-        <div>
+        <div className="mx-auto">
           <RightNav />
         </div>
       </div>
+
       <Footer />
     </div>
   );
