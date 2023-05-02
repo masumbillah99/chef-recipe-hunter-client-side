@@ -12,7 +12,7 @@ import indo from "../../../assets/icons/indo.png";
 
 const RightNav = () => {
   return (
-    <div className="container mx-auto bg-gray-400 bg-opacity-10 p-10 rounded-md">
+    <div className="bg-gray-400 bg-opacity-10 p-10 rounded-md">
       <div className="bg-white text-center p-5 rounded-md">
         <h3 className="text-xl font-bold uppercase">our newsletter</h3>
         <hr className="border border-dotted my-2" />

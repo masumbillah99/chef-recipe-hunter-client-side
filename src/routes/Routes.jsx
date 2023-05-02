@@ -1,8 +1,9 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import ChefLayout from "../layouts/ChefLayout";
 import Main from "../layouts/Main";
+import ChefDetails from "../pages/ChefDetails/ChefDetails/ChefDetails";
 import Chefs from "../pages/Home/Chefs/Chefs";
-import Home from "../pages/Home/Home/Home";
 
 const router = createBrowserRouter([
   {
@@ -12,8 +13,24 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("http://localhost:5000/chef"),
+        element: <Navigate to="/chef" />,
+      },
+      {
+        path: "/chef",
         element: <Chefs />,
+        loader: () => fetch("http://localhost:5000/chef"),
+      },
+    ],
+  },
+  {
+    path: "/chef",
+    element: <ChefLayout />,
+    children: [
+      {
+        path: ":id",
+        element: <ChefDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/chef/${params.id}`),
       },
     ],
   },
