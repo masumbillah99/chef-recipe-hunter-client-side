@@ -1,19 +1,53 @@
 import "flowbite";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
+  const { signInUser } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [emailErr, setEmailErr] = useState("");
+  const [password, setPassword] = useState("");
+  const [passErr, setPassErr] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // console.log(email, password);
+
+    signInUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        toast.success("Successfully Login");
+      })
+      .catch((error) => {
+        toast.error(error.code);
+      });
+  };
+
+  // uncontrolled component => controlled component
+  // const handleEmail = (e) => {
+  //   const emailInput = e.target.value;
+  //   setEmail(emailInput);
+  // };
+
+  // const handlePassword = (e) => {
+  //   const passwordInput = e.target.value;
+  //   setPassword(passwordInput);
+  // };
+
   return (
     <div className="max-w-screen-xl mx-auto mt-32 pb-7">
       <h1 className="mb-7 text-2xl font-bold text-center underline">
         Login Page
       </h1>
-      <form>
+      <form onSubmit={handleLogin}>
         <div className="relative z-0 w-3/4 md:w-1/2 mb-6 mx-auto group">
           <input
             type="email"
             name="email"
-            id="email"
+            onChange={(e) => setEmail(e.target.value)}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
@@ -29,7 +63,7 @@ const Login = () => {
           <input
             type="password"
             name="password"
-            id="password"
+            onChange={(e) => setPassword(e.target.value)}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
@@ -41,16 +75,16 @@ const Login = () => {
             Password
           </label>
         </div>
-        <div className="text-center">
+        <p className="text-center">
           <button
-            type="button"
-            className="text-white border bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2 w-3/4 md:w-1/2"
+            type="submit"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-3/4 md:w-1/2"
           >
             Login
           </button>
-        </div>
+        </p>
       </form>
-      <div className="text-center">
+      <div className="text-center mt-3">
         <p className="text-lg">
           New to Chef Master Food Recipe. Please
           <Link className="text-orange-500 ms-1" to="/register">
@@ -81,6 +115,7 @@ const Login = () => {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
