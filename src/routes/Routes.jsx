@@ -3,10 +3,12 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import ChefLayout from "../layouts/ChefLayout";
 import LoginLayout from "../layouts/LoginLayout";
 import Main from "../layouts/Main";
+import Blog from "../pages/Blog/Blog";
 import ChefDetails from "../pages/ChefDetails/ChefDetails/ChefDetails";
 import Chefs from "../pages/Home/Chefs/Chefs";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
     ],
   },
@@ -45,7 +51,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: ":id",
-        element: <ChefDetails />,
+        element: (
+          <PrivateRoute>
+            <ChefDetails />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/chef/${params.id}`),
       },

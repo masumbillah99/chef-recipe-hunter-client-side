@@ -4,7 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
-  const { user, registerUser } = useContext(AuthContext);
+  const { user, registerUser, updateUserProfile } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [photo, setPhoto] = useState("");
   const [email, setEmail] = useState("");
@@ -49,6 +49,9 @@ const Register = () => {
         .then((result) => {
           const createdUser = result.user;
           toast.success("Successfully registered.");
+          updateUserProfile(createdUser, name, photo);
+          console.log(createdUser);
+          e.target.reset();
         })
         .catch((error) => {
           toast.error(error.code);
@@ -79,7 +82,7 @@ const Register = () => {
         </div>
         <div className="relative z-0 w-3/4 md:w-1/2 mb-6 mx-auto group">
           <input
-            onChange={(e) => e.target.value}
+            onChange={(e) => setPhoto(e.target.value)}
             type="text"
             name="photo"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"

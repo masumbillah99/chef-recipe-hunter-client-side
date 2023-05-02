@@ -1,12 +1,16 @@
 import "flowbite";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { user, signInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/chef";
+
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [password, setPassword] = useState("");
@@ -14,17 +18,25 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // console.log(email, password);
 
     signInUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
         toast.success("Successfully Login");
+        navigate(from);
+        e.target.reset();
       })
       .catch((error) => {
         toast.error(error.code);
       });
   };
+
+  if (user !== null) {
+    const displayName = user.displayName;
+    const userEmail = user.email;
+    const photoURL = user.photoURL;
+    console.log(displayName, userEmail, photoURL);
+  }
 
   // uncontrolled component => controlled component
   // const handleEmail = (e) => {

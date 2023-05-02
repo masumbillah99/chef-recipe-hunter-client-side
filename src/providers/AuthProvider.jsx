@@ -4,6 +4,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
@@ -36,6 +37,7 @@ const AuthProvider = ({ children }) => {
   };
 
   // get the currently signed-in user
+  // observer auth state change
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
       // console.log("logged in user", loggedUser);
@@ -48,7 +50,22 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  const authInfo = { user, loading, registerUser, signInUser, logOutUser };
+  // update user data
+  const updateUserProfile = (authUser, name, photoUrl) => {
+    return updateProfile(authUser, {
+      displayName: name,
+      photoURL: photoUrl,
+    });
+  };
+
+  const authInfo = {
+    user,
+    loading,
+    registerUser,
+    signInUser,
+    logOutUser,
+    updateUserProfile,
+  };
 
   return (
     <div>
