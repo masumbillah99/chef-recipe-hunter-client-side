@@ -14,9 +14,47 @@ const ChefCard = ({ data }) => {
 
   return (
     <>
-      <div className="max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 sm:mb-10">
+      <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
         <img
-          className="rounded-t-lg w-40 mx-auto my-4"
+          className="p-8 w-full h-80 rounded-t-lg"
+          src={chef_picture}
+          alt="product image"
+        />
+        <div className="px-8 pb-5">
+          <h5 className="text-xl font-bold tracking-tight text-gray-900">
+            {chef_name}
+          </h5>
+          <p className="my-2">
+            Cooking Experience:
+            <span className="font-bold text-gray-900 ms-2">
+              {years_of_experience}
+            </span>{" "}
+            years
+          </p>
+          <div className="flex items-center justify-between mb-6">
+            <p>
+              Number of Recipe:
+              <span className="font-bold text-gray-900 ms-2">
+                {num_of_recipes}
+              </span>
+            </p>
+            <p className="flex">
+              <HandThumbUpIcon className="w-6 text-blue-500 me-1" />
+              <span className="font-bold text-gray-900">{likes}</span>
+            </p>
+          </div>
+          <Link
+            to={`/chef/${id}`}
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            View Recipes
+          </Link>
+        </div>
+      </div>
+
+      {/* <div className="max-w-sm h-3/4 p-3 bg-white border border-gray-200 rounded-lg shadow sm:mb-10">
+        <img
+          className="rounded-t-lg w-full h-1/2 mx-auto my-4"
           src={chef_picture}
           alt=""
         />
@@ -57,7 +95,7 @@ const ChefCard = ({ data }) => {
             </svg>
           </Link>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

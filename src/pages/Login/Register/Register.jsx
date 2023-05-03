@@ -4,14 +4,13 @@ import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
-  const { user, registerUser, updateUserProfile } = useContext(AuthContext);
+  const { registerUser, updateUserProfile } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [photo, setPhoto] = useState("");
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [password, setPassword] = useState("");
   const [passErr, setPassErr] = useState("");
-  const [error, setError] = useState("");
 
   // uncontrolled component => controlled component
   const handleEmail = (e) => {

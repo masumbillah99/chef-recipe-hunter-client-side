@@ -11,7 +11,7 @@ const ChefLayout = () => {
         <div className="col-span-2 mx-auto lg:mx-0 mb-10 lg:mb-0">
           <Outlet />
         </div>
-        <div className="mx-auto lg:mx-0">
+        <div className="">
           <RightNav />
         </div>
       </div>

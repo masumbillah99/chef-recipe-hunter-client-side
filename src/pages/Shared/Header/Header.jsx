@@ -1,8 +1,6 @@
 // import React from "react";
-import "flowbite";
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { toast } from "react-toastify";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Header = () => {
@@ -19,7 +17,7 @@ const Header = () => {
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <div className="text-2xl lg:text-4xl font-bold">
+        <div className="text-xl md:text-2xl lg:text-4xl font-bold mb-3 md:mb-0">
           <Link>Chef Master Food Recipe</Link>
         </div>
         <div className="flex md:order-2">
@@ -50,7 +48,7 @@ const Header = () => {
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
-            className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 ms-5"
             aria-controls="navbar-sticky"
             aria-expanded="false"
           >

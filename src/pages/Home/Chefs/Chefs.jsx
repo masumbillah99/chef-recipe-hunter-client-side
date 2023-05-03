@@ -6,11 +6,12 @@ const Chefs = () => {
 
   return (
     <div>
-      <h2 className="text-2xl text-gray-500 font-bold mb-5">
-        Latest Chef Master
+      <h2 className="text-2xl text-gray-500 font-bold">
+        Meet Our Awesome Chefs
       </h2>
+      <hr className="mt-2 mb-10 w-1/2 border-2 border-indigo-800 rounded" />
       <div className="grid md:grid-cols-2 gap-3">
-        {chefData.map((data) => (
+        {chefData?.map((data) => (
           <ChefCard key={data.id} data={data}></ChefCard>
         ))}
       </div>

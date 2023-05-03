@@ -10,11 +10,8 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/chef";
-
   const [email, setEmail] = useState("");
-  const [emailErr, setEmailErr] = useState("");
   const [password, setPassword] = useState("");
-  const [passErr, setPassErr] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();

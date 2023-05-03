@@ -9,7 +9,7 @@ const RecipeInfo = ({ info }) => {
   const { cooking_method, ingredients, rating, recipe_name, _id } = info;
 
   return (
-    <div className="p-5">
+    <div className="w-full bg-white border border-gray-200 rounded-lg shadow p-5 md:p-10 mb-7">
       <article>
         <h2 className="text-2xl md:text-4xl font-bold flex gap-3">
           <img className="w-10" src={recipeImg} alt="" />
@@ -27,8 +27,8 @@ const RecipeInfo = ({ info }) => {
           <li>
             <span className="text-xl font-bold text-gray-600">Ingredients</span>
             <ul className="pl-5 mt-2 space-y-1 list-disc list-inside">
-              {ingredients.map((ing) => (
-                <li>{ing}</li>
+              {ingredients?.map((ingredient) => (
+                <li>{ingredient}</li>
               ))}
             </ul>
           </li>
@@ -37,8 +37,8 @@ const RecipeInfo = ({ info }) => {
               Cooking Method
             </span>
             <ul className="pl-5 mt-2 space-y-1 list-disc list-inside">
-              {cooking_method.map((cm) => (
-                <li>{cm}</li>
+              {cooking_method?.map((method) => (
+                <li>{method}</li>
               ))}
             </ul>
           </li>
@@ -55,7 +55,6 @@ const RecipeInfo = ({ info }) => {
           </button>
         </p>
       </article>
-      <hr className="my-3" />
       <ToastContainer />
     </div>
   );
