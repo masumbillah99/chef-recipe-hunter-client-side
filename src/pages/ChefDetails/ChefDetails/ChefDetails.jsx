@@ -22,7 +22,7 @@ const ChefDetails = () => {
   }
 
   return (
-    <div className="px-5 md:px-0 md:mx-10">
+    <div className="mx-2 md:px-0 md:mx-10">
       <div className="flex flex-col items-center gap-5 p-5 bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100">
         <img
           className="object-cover md:w-1/2 h-80 rounded-t-lg md:rounded-none md:rounded-l-lg"

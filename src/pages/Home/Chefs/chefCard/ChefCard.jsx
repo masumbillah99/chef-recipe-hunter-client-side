@@ -1,6 +1,7 @@
 import "flowbite";
 import { Link } from "react-router-dom";
 import { HandThumbUpIcon } from "@heroicons/react/24/solid";
+import LazyLoad from "react-lazy-load";
 
 const ChefCard = ({ data }) => {
   const {
@@ -15,11 +16,13 @@ const ChefCard = ({ data }) => {
   return (
     <>
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-        <img
-          className="p-8 w-full h-80 rounded-t-lg"
-          src={chef_picture}
-          alt="product image"
-        />
+        <LazyLoad>
+          <img
+            className="p-8 w-full h-80 rounded-t-lg"
+            src={chef_picture}
+            alt="product image"
+          />
+        </LazyLoad>
         <div className="px-8 pb-5">
           <h5 className="text-xl font-bold tracking-tight text-gray-900">
             {chef_name}

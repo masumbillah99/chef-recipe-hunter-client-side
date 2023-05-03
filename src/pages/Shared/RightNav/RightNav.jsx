@@ -1,80 +1,73 @@
 import "flowbite";
-import chicken from "../../../assets/icons/chicken.png";
-import fastFood from "../../../assets/icons/fast-food.png";
-import fish from "../../../assets/icons/fish.png";
-import pizza from "../../../assets/icons/pizza.png";
-import salad from "../../../assets/icons/salad.png";
-import soup from "../../../assets/icons/soup.png";
-import pak from "../../../assets/flag/pak.png";
-import jap from "../../../assets/flag/jap.png";
-import mal from "../../../assets/flag/maly.png";
-import indo from "../../../assets/flag/indo.png";
+import { useEffect, useState } from "react";
+import { FaFacebookF, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const RightNav = () => {
-  return (
-    <div className="bg-gray-400 bg-opacity-10 p-10 rounded-md w-full">
-      <div className="bg-white text-center p-5 rounded-md">
-        <h3 className="text-xl font-bold uppercase">our newsletter</h3>
-        <hr className="border border-dotted my-2" />
-        <p className="my-5">
-          Subscribe for our weekly recipes tips, wew promise to not spam you.
-        </p>
-        <input
-          type="email"
-          id="email"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Your email address"
-        />
-      </div>
+  const [countries, setCountries] = useState([]);
 
-      <div className="mt-8">
-        <h3 className="text-xl font-bold uppercase">categories</h3>
-        <div className="grid grid-cols-2 px-10 pt-4 cursor-pointer">
-          <div className="border-2 border-dotted border-t-0 border-s-0 ps-5 md:ps-20 lg:ps-2 pb-3">
-            <img className="w-12" src={chicken} alt="" />
-            <h4 className="text-lg font-semibold mt-3">Chicken</h4>
-          </div>
-          <div className="border-2 border-dotted border-t-0 border-x-0 ps-5 md:ps-20 lg:ps-1 xl:ps-12">
-            <img className="w-12" src={fastFood} alt="" />
-            <h4 className="text-lg font-semibold mt-3">Fast Food</h4>
-          </div>
-          <div className="border-2 border-dotted border-t-0 border-s-0 ps-5 md:ps-20 lg:ps-2 py-3">
-            <img className="w-12" src={pizza} alt="" />
-            <h4 className="text-lg font-semibold mt-3">Pizza</h4>
-          </div>
-          <div className="border-2 border-dotted border-t-0 border-x-0 ps-5 md:ps-20 lg:ps-1 xl:ps-12 py-3">
-            <img className="w-12" src={fish} alt="" />
-            <h4 className="text-lg font-semibold mt-3">Fish</h4>
-          </div>
-          <div className="border-2 border-dotted  border-y-0 border-s-0 ps-5 md:ps-20 lg:ps-2 py-3">
-            <img className="w-12" src={soup} alt="" />
-            <h4 className="text-lg font-semibold mt-3">Soups</h4>
-          </div>
-          <div className="border-2 border-dotted border-y-0 border-x-0 ps-5 md:ps-20 lg:ps-1 xl:ps-12 py-3">
-            <img className="w-12" src={salad} alt="" />
-            <h4 className="text-lg font-semibold mt-3">Salads</h4>
+  useEffect(() => {
+    fetch("http://localhost:5000/country")
+      .then((res) => res.json())
+      .then((data) => setCountries(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  return (
+    <div className="">
+      <div className="bg-gray-400 bg-opacity-10 p-5 rounded-md">
+        <div className="bg-white p-5 rounded-md">
+          <h3 className="text-xl font-bold uppercase">Other Countries Chef</h3>
+          <hr className="mt-2 mb-5 w-3/4 border-2 border-indigo-800 rounded" />
+          <div>
+            {countries?.map((country) => (
+              <p
+                key={country.id}
+                className="font-bold uppercase py-2 px-5 border-b-2 cursor-pointer"
+              >
+                {country?.country_name}
+              </p>
+            ))}
           </div>
         </div>
       </div>
 
-      <div className="mt-8">
-        <h3 className="text-xl font-bold uppercase">popular cuisines</h3>
-        <div className="grid grid-cols-2 px-10 pt-4 cursor-pointer">
-          <div className="border-2 border-dotted border-t-0 border-s-0 md:ps-20 lg:ps-2 py-5">
-            <img className="w-12" src={pak} alt="" />
-            <h4 className="text-lg font-semibold mt-3">Pakistan</h4>
+      <div className="flex flex-col items-center justify-center h-80 mt-5 text-center text-white bg-center bg-no-repeat bg-[url('https://i.ibb.co/FgfTrqf/slider-2.jpg')]">
+        <h2 className="font-bold text-2xl">Awesome Recipe here</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, animi!
+        </p>
+      </div>
+
+      <div className="my-10">
+        <h3 className="text-2xl font-bold">Share</h3>
+        <hr className="mt-2 mb-5 w-1/4 border-2 border-indigo-800 rounded" />
+        <div className="flex gap-3">
+          <div className="bg-blue-500 hover:bg-blue-700 w-20 h-20">
+            <Link
+              to="https://www.facebook.com/profile.php?id=100036766350727"
+              target="_blank"
+            >
+              <FaFacebookF className="h-20 text-2xl text-white mx-auto" />
+            </Link>
           </div>
-          <div className="border-2 border-dotted border-t-0 border-x-0 ps-10 md:ps-20 lg:ps-10 py-5">
-            <img className="w-12" src={jap} alt="" />
-            <h4 className="text-lg font-semibold mt-3">Japan</h4>
+          <div className=" bg-sky-700 hover:bg-sky-900 w-20 h-20">
+            <Link to="https://twitter.com/masumbillah_99" target="_blank">
+              <FaTwitter className="h-20 text-2xl text-white mx-auto" />
+            </Link>
           </div>
-          <div className="border-2 border-dotted border-y-0 border-s-0 md:ps-20 lg:ps-2 py-5">
-            <img className="w-12" src={mal} alt="" />
-            <h4 className="text-lg font-semibold mt-3">Malaysia</h4>
+          <div className="bg-blue-800 hover:bg-blue-500 w-20 h-20">
+            <Link
+              to="https://www.linkedin.com/in/masumbillah99/"
+              target="_blank"
+            >
+              <FaLinkedin className="h-20 text-2xl text-white mx-auto" />
+            </Link>
           </div>
-          <div className="border-2 border-dotted border-y-0 border-x-0 ps-10 md:ps-20 lg:ps-10 py-5">
-            <img className="w-12" src={indo} alt="" />
-            <h4 className="text-lg font-semibold mt-3">Indonesia</h4>
+          <div className="bg-gray-500 hover:bg-gray-700 w-20 h-20">
+            <Link to="https://www.github.com/masumbillah99/" target="_blank">
+              <FaGithub className="h-20 text-2xl text-white mx-auto" />
+            </Link>
           </div>
         </div>
       </div>
