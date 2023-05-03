@@ -14,7 +14,7 @@ const RightNav = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="mx-2">
       <div className="bg-gray-400 bg-opacity-10 p-5 rounded-md">
         <div className="bg-white p-5 rounded-md">
           <h3 className="text-xl font-bold uppercase">Other Countries Chef</h3>
@@ -42,7 +42,7 @@ const RightNav = () => {
       <div className="my-10">
         <h3 className="text-2xl font-bold">Share</h3>
         <hr className="mt-2 mb-5 w-1/4 border-2 border-indigo-800 rounded" />
-        <div className="flex gap-3">
+        <div className="flex gap-3 mx-5 lg:mx-0">
           <div className="bg-blue-500 hover:bg-blue-700 w-20 h-20">
             <Link
               to="https://www.facebook.com/profile.php?id=100036766350727"

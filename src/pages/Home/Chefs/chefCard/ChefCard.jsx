@@ -1,7 +1,7 @@
-import "flowbite";
 import { Link } from "react-router-dom";
 import { HandThumbUpIcon } from "@heroicons/react/24/solid";
 import LazyLoad from "react-lazy-load";
+import { AiFillLike } from "react-icons/ai";
 
 const ChefCard = ({ data }) => {
   const {
@@ -41,8 +41,8 @@ const ChefCard = ({ data }) => {
                 {num_of_recipes}
               </span>
             </p>
-            <p className="flex">
-              <HandThumbUpIcon className="w-6 text-blue-500 me-1" />
+            <p className="flex items-center">
+              <AiFillLike className="w-6 h-6 text-blue-500 me-1 mb-1" />
               <span className="font-bold text-gray-900">{likes}</span>
             </p>
           </div>

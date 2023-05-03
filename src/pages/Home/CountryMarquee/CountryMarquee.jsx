@@ -12,7 +12,7 @@ const CountryMarquee = () => {
     <>
       <div className="max-w-screen-xl mx-auto ps-10 pt-10">
         <h1 className="text-2xl font-bold ">Our World Customer Country</h1>
-        <hr className="mt-2 mb-8 w-1/2 border-2 border-indigo-800 rounded" />
+        <hr className="mt-2 mb-8 w-1/3 border-2 border-indigo-800 rounded" />
       </div>
       <Marquee direction="right" speed={100}>
         <div className="mx-4">

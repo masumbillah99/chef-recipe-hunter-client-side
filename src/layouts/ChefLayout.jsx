@@ -7,11 +7,11 @@ const ChefLayout = () => {
   return (
     <>
       <Header />
-      <div className="max-w-screen-xl mx-auto grid lg:grid-cols-3 gap-3 mt-32">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-3 mt-32">
         <div className="col-span-2 mx-auto lg:mx-0 mb-10 lg:mb-0">
           <Outlet />
         </div>
-        <div className="mx-5 md:mx-0">
+        <div className="">
           <RightNav />
         </div>
       </div>
