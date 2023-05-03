@@ -23,12 +23,14 @@ const Header = () => {
         <div className="flex md:order-2">
           {user ? (
             <div className="flex items-center gap-3">
-              <img
-                src={user?.photoURL}
-                alt="user profile"
-                title={user?.displayName}
-                className="w-10 rounded-md"
-              />
+              <Link to="/user-details">
+                <img
+                  src={user?.photoURL}
+                  alt="user profile"
+                  title={user?.displayName}
+                  className="w-10 rounded-md"
+                />
+              </Link>
               <button
                 onClick={handleLogout}
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-3 text-center"

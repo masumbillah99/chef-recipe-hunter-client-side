@@ -10,6 +10,7 @@ import Register from "../pages/Login/Register/Register";
 import Blog from "../pages/Shared/Blog/Blog";
 import About from "../pages/Shared/About/About";
 import PrivateRoute from "./PrivateRoute";
+import UserDetails from "../pages/UserDetails/UserDetails";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,11 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
-      }
+      },
+      {
+        path: "/user-details",
+        element: <UserDetails />,
+      },
     ],
   },
   {
