@@ -98,6 +98,18 @@ const Header = () => {
                 Blog
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:p-0"
+                    : "text-gray-600"
+                }
+              >
+                About us
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
