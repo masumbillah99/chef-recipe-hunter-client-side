@@ -60,7 +60,7 @@ const ChefDetails = () => {
         <h2 className="text-4xl font-bold">Here are some of my Recipe</h2>
         <hr className="mt-2 mb-8 w-3/4 border-2 border-indigo-800 rounded" />
         {recipe_info?.map((info) => (
-          <RecipeInfo key={info._id} info={info} />
+          <RecipeInfo key={info._id} info={info} chef_name={chef_name} />
         ))}
       </div>
     </div>
