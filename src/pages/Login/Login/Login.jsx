@@ -1,21 +1,22 @@
-import "flowbite";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle, FaGithub } from "react-icons/fa";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
-  const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const { signInUser, googleSignIn, githubSignIn, resetPassword } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const emailRef = useRef();
   const from = location?.state?.from?.pathname || "/chef";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // sign in a new user (first time)
   const handleLogin = (e) => {
     e.preventDefault();
-
     signInUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
@@ -28,6 +29,7 @@ const Login = () => {
       });
   };
 
+  // google login with popup
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((result) => {
@@ -40,6 +42,7 @@ const Login = () => {
       });
   };
 
+  // github login with popup
   const handleGithubLogin = () => {
     githubSignIn()
       .then((result) => {
@@ -47,6 +50,21 @@ const Login = () => {
         toast.success("successfully login with google");
         navigate(from);
         console.log(user);
+      })
+      .catch((error) => {
+        toast.error(error.code);
+      });
+  };
+
+  // handle reset password when you forget password
+  const handleResetPassword = () => {
+    const emailInput = emailRef.current.value;
+    if (!emailInput) {
+      toast.warning("Please provide email for reset password");
+    }
+    resetPassword(emailInput)
+      .then(() => {
+        toast.success("Check your email");
       })
       .catch((error) => {
         toast.error(error.code);
@@ -75,6 +93,7 @@ const Login = () => {
             type="email"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
+            ref={emailRef}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
@@ -112,9 +131,18 @@ const Login = () => {
         </p>
       </form>
       <div className="text-center mt-3">
-        <p className="text-lg">
+        <p className="text-red-500">
+          Forget Password? Please
+          <Link
+            onClick={handleResetPassword}
+            className="text-blue-500 ms-1 hover:underline"
+          >
+            Reset Password
+          </Link>
+        </p>
+        <p className="text-lg mt-5">
           New to Chef Master Food Recipe. Please
-          <Link className="text-orange-500 ms-1" to="/register">
+          <Link className="text-orange-500 hover:underline ms-1" to="/register">
             Register
           </Link>
         </p>

@@ -1,6 +1,5 @@
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
-import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 
 const UserDetails = () => {
   const { user } = useContext(AuthContext);
@@ -22,7 +21,7 @@ const UserDetails = () => {
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {user?.email}
           </p>
-          <button className="bg-blue-500 text-white py-2 rounded-md">Edit Info</button>
+          <button className="bg-blue-500 text-white py-2 px-3 rounded-md">Edit Info</button>
         </div>
       </div>
     </div>
