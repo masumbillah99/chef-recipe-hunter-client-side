@@ -77,7 +77,9 @@ const AuthProvider = ({ children }) => {
   // reset password
   const resetPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
-  }
+  };
+
+  // react-pdf for download pdf
 
   const authInfo = {
     user,
@@ -88,7 +90,7 @@ const AuthProvider = ({ children }) => {
     updateUserProfile,
     googleSignIn,
     githubSignIn,
-    resetPassword
+    resetPassword,
   };
 
   return (

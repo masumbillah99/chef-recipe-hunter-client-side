@@ -11,6 +11,7 @@ import Blog from "../pages/Shared/Blog/Blog";
 import About from "../pages/Shared/About/About";
 import PrivateRoute from "./PrivateRoute";
 import UserDetails from "../pages/UserDetails/UserDetails";
+import FavoriteRecipe from "../pages/ChefDetails/FavoriteRecipe/FavoriteRecipe";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: "/user-details",
         element: <UserDetails />,
+      },
+      {
+        path: "/favorite-recipe",
+        element: (
+          <PrivateRoute>
+            <FavoriteRecipe />
+          </PrivateRoute>
+        ),
       },
     ],
   },

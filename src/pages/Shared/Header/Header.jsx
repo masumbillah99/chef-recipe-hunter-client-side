@@ -112,6 +112,18 @@ const Header = () => {
                 About us
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/favorite-recipe"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:p-0"
+                    : "text-gray-600"
+                }
+              >
+                Favorite Recipe
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>

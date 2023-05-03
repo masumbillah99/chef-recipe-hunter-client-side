@@ -14,15 +14,13 @@ const ChefCard = ({ data }) => {
   } = data;
 
   return (
-    <>
+    <LazyLoad height={500} offset={300} threshold={0.95}>
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-        <LazyLoad>
-          <img
-            className="p-8 w-full h-80 rounded-t-lg"
-            src={chef_picture}
-            alt="product image"
-          />
-        </LazyLoad>
+        <img
+          className="p-8 w-full h-80 rounded-t-lg"
+          src={chef_picture}
+          alt="product image"
+        />
         <div className="px-8 pb-5">
           <h5 className="text-xl font-bold tracking-tight text-gray-900">
             {chef_name}
@@ -99,7 +97,7 @@ const ChefCard = ({ data }) => {
           </Link>
         </div>
       </div> */}
-    </>
+    </LazyLoad>
   );
 };
 
