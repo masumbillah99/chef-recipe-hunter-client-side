@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import ChefCard from "./chefCard/ChefCard";
+import ChefCard from "../chefCard/ChefCard";
 
 const Chefs = () => {
   const chefData = useLoaderData();

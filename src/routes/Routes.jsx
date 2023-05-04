@@ -4,7 +4,6 @@ import ChefLayout from "../layouts/ChefLayout";
 import LoginLayout from "../layouts/LoginLayout";
 import Main from "../layouts/Main";
 import ChefDetails from "../pages/ChefDetails/ChefDetails/ChefDetails";
-import Chefs from "../pages/Home/Chefs/Chefs";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import Blog from "../pages/Shared/Blog/Blog";
@@ -12,6 +11,7 @@ import About from "../pages/Shared/About/About";
 import PrivateRoute from "./PrivateRoute";
 import UserDetails from "../pages/UserDetails/UserDetails";
 import FavoriteRecipe from "../pages/ChefDetails/FavoriteRecipe/FavoriteRecipe";
+import Chefs from "../pages/Home/Chefs/Chefs/Chefs";
 
 const router = createBrowserRouter([
   {

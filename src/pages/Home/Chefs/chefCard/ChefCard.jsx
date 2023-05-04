@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { HandThumbUpIcon } from "@heroicons/react/24/solid";
 import LazyLoad from "react-lazy-load";
 import { AiFillLike } from "react-icons/ai";
 
