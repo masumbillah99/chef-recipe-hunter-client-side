@@ -19,7 +19,8 @@ Chef Master Food Recipe is a single page web application. Where we add firebase 
 5. FIREBASE
 6. REACT ICONS
 7. TAILWIND CSS
-8. FLOWBITE CSS etc.
+8. FLOWBITE CSS
+9. DAISY UI
 
 # Live Link
 

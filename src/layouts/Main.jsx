@@ -15,7 +15,7 @@ const Main = () => {
         <div className="col-span-2 mx-5 md:ms-14">
           <Outlet />
         </div>
-        <div className="mx-auto">
+        <div className="mx-10 lg:mx-0">
           <RightNav />
         </div>
       </div>

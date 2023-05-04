@@ -58,10 +58,12 @@ const ChefDetails = () => {
       </div>
       <div className="mt-10">
         <h2 className="text-4xl font-bold">Here are some of my Recipe</h2>
-        <hr className="mt-2 mb-8 w-3/4 border-2 border-indigo-800 rounded" />
-        {recipe_info?.map((info) => (
-          <RecipeInfo key={info._id} info={info} chef_name={chef_name} />
-        ))}
+        <hr className="mt-2 mb-8 w-1/2 border-2 border-indigo-800 rounded" />
+        <div className="grid grid-cols-2 gap-3">
+          {recipe_info?.map((info) => (
+            <RecipeInfo key={info._id} info={info} chef_name={chef_name} />
+          ))}
+        </div>
       </div>
     </div>
   );

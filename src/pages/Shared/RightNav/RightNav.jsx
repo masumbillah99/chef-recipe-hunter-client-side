@@ -18,15 +18,15 @@ const RightNav = () => {
       <div className="bg-gray-400 bg-opacity-10 p-5 rounded-md">
         <div className="bg-white p-5 rounded-md">
           <h3 className="text-xl font-bold uppercase">Other Countries Chef</h3>
-          <hr className="mt-2 mb-5 w-3/4 border-2 border-indigo-800 rounded" />
+          <hr className="mt-2 mb-5 w-1/2 lg:w-3/4 border-2 border-indigo-800 rounded" />
           <div>
             {countries?.map((country) => (
-              <p
+              <div
                 key={country.id}
-                className="font-bold uppercase py-2 px-5 border-b-2 cursor-pointer"
+                className="font-bold uppercase py-2 px-5 border-b-2 hover:bg-gray-100 cursor-pointer"
               >
                 {country?.country_name}
-              </p>
+              </div>
             ))}
           </div>
         </div>

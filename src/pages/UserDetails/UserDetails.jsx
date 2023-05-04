@@ -9,13 +9,7 @@ const UserDetails = () => {
   const [name, setName] = useState("");
   const [photo, setPhoto] = useState("");
 
-  const handleUpdate = (e) => {
-    // console.log(user);
-    // const form = e.target;
-    // const emailInput = e.target;
-    // const nameInput = form.name.value;
-    // const photoInput = form.photo.value;
-    // console.log(emailInput);
+  const handleUpdate = () => {
     updateUserProfile(user, name, photo);
 
     updateUserEmail(user, email)
@@ -45,27 +39,89 @@ const UserDetails = () => {
             {user?.email}
           </p>
 
+          {/* The button to open modal */}
+          <label htmlFor="my-modal" className="btn px-10 bg-blue-500 border-0">
+            Edit Info
+          </label>
+
+          {/* Put this part before </body> tag */}
+          <input type="checkbox" id="my-modal" className="modal-toggle" />
+          <div className="modal">
+            <div className="modal-box">
+              <h3 className="font-bold text-lg text-sky-700">
+                Change your personal information
+              </h3>
+              <hr className="my-3" />
+              <div>
+                <label htmlFor="name" className="ms-2 font-semibold">
+                  Your Name
+                </label>{" "}
+                <br />
+                <input
+                  type="text"
+                  name="name"
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="new name"
+                  className="input input-bordered w-full max-w-xs mt-2 mx-3"
+                />
+              </div>
+              <div className="my-3">
+                <label htmlFor="photo" className="ms-2 font-semibold">
+                  Your Photo URL
+                </label>{" "}
+                <br />
+                <input
+                  type="text"
+                  name="photo"
+                  onChange={(e) => setPhoto(e.target.value)}
+                  placeholder="new photo url"
+                  className="input input-bordered w-full max-w-xs mt-2 mx-3"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="ms-2 font-semibold">
+                  Email Address
+                </label>{" "}
+                <br />
+                <input
+                  type="email"
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="new email address"
+                  className="input input-bordered w-full max-w-xs mt-2 mx-3"
+                />
+              </div>
+              <div className="modal-action">
+                <label
+                  htmlFor="my-modal"
+                  className="btn bg-red-500 hover:bg-green-600 border-0"
+                  onClick={handleUpdate}
+                >
+                  Update
+                </label>
+              </div>
+            </div>
+          </div>
+
           {/* <!-- Modal toggle --> */}
-          <button
+          {/* <button
             data-modal-target="defaultModal"
             data-modal-toggle="defaultModal"
             className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             type="button"
           >
             Edit Info
-          </button>
+          </button> */}
 
           {/* <!-- Main modal --> */}
-          <div
+          {/* <div
             id="defaultModal"
             tabIndex="-1"
             aria-hidden="true"
             className="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
-          >
-            <div className="relative w-full max-w-2xl max-h-full">
-              {/* <!-- Modal content --> */}
+          > */}
+          {/* <div className="relative w-full max-w-2xl max-h-full">
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                {/* <!-- Modal header --> */}
                 <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     Edit your about information
@@ -91,7 +147,6 @@ const UserDetails = () => {
                     <span className="sr-only">Close modal</span>
                   </button>
                 </div>
-                {/* <!-- Modal body --> */}
                 <div className="p-6 space-y-6">
                   <div className="relative z-0 w-full mb-6 group">
                     <input
@@ -152,7 +207,7 @@ const UserDetails = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <ToastContainer />

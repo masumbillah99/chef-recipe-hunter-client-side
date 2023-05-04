@@ -96,7 +96,7 @@ const RecipeInfo = ({ info, chef_name }) => {
             <span className="text-xl font-bold text-gray-600">
               Cooking Method
             </span>
-            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside">
+            <ul className="h-48 overflow-scroll overflow-x-hidden pl-5 mt-2 space-y-1 list-disc list-inside">
               {cooking_method?.map((method) => (
                 <li>{method}</li>
               ))}

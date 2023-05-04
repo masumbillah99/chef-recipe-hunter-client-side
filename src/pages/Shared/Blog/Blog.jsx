@@ -1,10 +1,25 @@
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import PdfFile from "./PdfFile";
+import { useState } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const Blog = () => {
+  const [numPages, setNumPages] = useState(null);
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "../../../assets/output.pdf";
+    link.setAttribute("download", "blog.pdf");
+    document.body.appendChild(link);
+    link.click();
+  };
+
   // const handlePdf = () => {
   //   <PDFDownloadLink document={<PdfFile />} fileName="Blog">
   //     {({ loading }) => (loading ? "loading document.." : "download")}
@@ -47,6 +62,13 @@ const Blog = () => {
                 <FaLinkedin />
               </Link>
             </div>
+            <Document
+              file="../../../assets/output.pdf"
+              onLoadSuccess={onDocumentLoadSuccess}
+            >
+              {""}
+            </Document>
+
             <div className="ms-auto">
               {/* {
                 <PDFDownloadLink document={<PdfFile />} fileName="BLOG">
@@ -61,7 +83,10 @@ const Blog = () => {
                   }
                 </PDFDownloadLink>
               } */}
-              <button className="px-4 py-2 bg-green-500 text-white rounded-md">
+              <button
+                onClick={handleDownload}
+                className="px-4 py-2 bg-green-500 text-white rounded-md"
+              >
                 Download PDF
               </button>
             </div>
