@@ -6,6 +6,8 @@ import recipeImg from "../../../assets/icons/recipe.png";
 import "react-toastify/dist/ReactToastify.css";
 
 const RecipeInfo = ({ info, chef_name }) => {
+  const [disable, setDisable] = useState(false);
+  const [storage, setStorage] = useState([]);
   const {
     cooking_method,
     ingredients,
@@ -14,8 +16,6 @@ const RecipeInfo = ({ info, chef_name }) => {
     recipe_picture,
     _id,
   } = info;
-  const [disable, setDisable] = useState(false);
-  const [storage, setStorage] = useState([]);
 
   // const handleDisable = () => {
   //   if (!disable) {

@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateEmail,
   updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
@@ -64,6 +65,11 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  // update user's email address
+  const updateUserEmail = (authUser, email) => {
+    return updateEmail(authUser, email);
+  };
+
   // google sign in
   const googleSignIn = () => {
     return signInWithPopup(auth, googleProvider);
@@ -88,6 +94,7 @@ const AuthProvider = ({ children }) => {
     signInUser,
     logOutUser,
     updateUserProfile,
+    updateUserEmail,
     googleSignIn,
     githubSignIn,
     resetPassword,

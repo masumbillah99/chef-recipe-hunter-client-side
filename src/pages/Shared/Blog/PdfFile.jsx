@@ -1,71 +1,10 @@
-import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import moment from "moment";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import PdfFile from "./PdfFile";
+import { Document, Page, Text } from "@react-pdf/renderer";
 
-const Blog = () => {
-  // const handlePdf = () => {
-  //   <PDFDownloadLink document={<PdfFile />} fileName="Blog">
-  //     {({ loading }) => (loading ? "loading document.." : "download")}
-  //   </PDFDownloadLink>;
-  // };
-
+const PdfFile = () => {
   return (
-    <>
-      <section className="max-w-screen-xl mx-auto mt-32">
-        <div className="job-header bg-violet-400 bg-opacity-10 py-4">
-          <h1 className="text-center text-4xl font-bold">Welcome Blogs</h1>
-        </div>
-        <div className="my-10 border-r rounded-lg">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 p-3">
-            <div className="flex gap-4 items-center">
-              <img
-                className="w-24 -mb-5"
-                src="https://i.ibb.co/vCNpxDB/person-2.png"
-                alt="writer image"
-              />
-              <div>
-                <h3 className="text-xl font-semibold">Muhammad Masum Billah</h3>
-                <p className="text-lg">{moment().format("MMMM D, YYYY")}</p>
-              </div>
-            </div>
-            <div className="flex gap-6 text-2xl mx-auto">
-              <Link
-                to="https://www.facebook.com/profile.php?id=100036766350727"
-                target="_blank"
-              >
-                <FaFacebook />
-              </Link>
-              <Link to="https://github.com/masumbillah99" target="_blank">
-                <FaGithub />
-              </Link>
-              <Link
-                to="https://www.linkedin.com/in/masumbillah99/"
-                target="_blank"
-              >
-                <FaLinkedin />
-              </Link>
-            </div>
-            <div className="ms-auto">
-              {/* {
-                <PDFDownloadLink document={<PdfFile />} fileName="BLOG">
-                  {({ loading }) =>
-                    loading ? (
-                      "loading document.."
-                    ) : (
-                      <button className="px-4 py-2 bg-green-500 text-white rounded-md">
-                        Download PDF
-                      </button>
-                    )
-                  }
-                </PDFDownloadLink>
-              } */}
-            </div>
-          </div>
-
-          {/* blog section */}
-
+    <Document>
+      <Page size="A4">
+        <Text>
           <article className="my-8 mx-5">
             <h2 className="text-3xl font-bold">
               Differences between uncontrolled and controlled components?
@@ -113,6 +52,8 @@ const Blog = () => {
               </div>
             </div>
           </article>
+        </Text>
+        <Text>
           <article className="my-8 mx-5">
             <h2 className="text-3xl font-bold">
               How to validate React props using PropTypes?
@@ -130,6 +71,8 @@ const Blog = () => {
               and define the expected prop types for your component.
             </div>
           </article>
+        </Text>
+        <Text>
           <article className="my-8 mx-5">
             <h2 className="text-3xl font-bold">
               Differences between nodejs and express js?
@@ -177,6 +120,8 @@ const Blog = () => {
               </div>
             </div>
           </article>
+        </Text>
+        <Text>
           <article className="my-8 mx-5">
             <h2 className="text-3xl font-bold">
               What is a custom hook? And why will you create a custom hook?
@@ -207,10 +152,16 @@ const Blog = () => {
               </p>
             </div>
           </article>
-        </div>
-      </section>
-    </>
+        </Text>
+        <Text
+          render={({ pageNumber, totalPages }) =>
+            `${pageNumber} / ${totalPages}`
+          }
+          fixed
+        />
+      </Page>
+    </Document>
   );
 };
 
-export default Blog;
+export default PdfFile;

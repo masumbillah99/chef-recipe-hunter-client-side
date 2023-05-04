@@ -74,13 +74,13 @@ const Header = () => {
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 text-lg font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col p-4 gap-4 md:p-0 mt-4 text-lg font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <NavLink
                 to="/chef"
                 className={({ isActive }) =>
                   isActive
-                    ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:p-0"
+                    ? "block py-2 md:pl-3 pr-4 text-blue-700 rounded md:p-0"
                     : "text-gray-600"
                 }
                 aria-current="page"
@@ -93,7 +93,7 @@ const Header = () => {
                 to="/blog"
                 className={({ isActive }) =>
                   isActive
-                    ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:p-0"
+                    ? "block py-2 md:pl-3 pr-4 text-blue-700 rounded md:p-0"
                     : "text-gray-600"
                 }
               >
@@ -105,7 +105,7 @@ const Header = () => {
                 to="/about"
                 className={({ isActive }) =>
                   isActive
-                    ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:p-0"
+                    ? "block py-2 md:pl-3 pr-4 text-blue-700 rounded md:p-0"
                     : "text-gray-600"
                 }
               >
@@ -117,7 +117,7 @@ const Header = () => {
                 to="/favorite-recipe"
                 className={({ isActive }) =>
                   isActive
-                    ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:p-0"
+                    ? "block py-2 md:pl-3 pr-4 text-blue-700 rounded md:p-0"
                     : "text-gray-600"
                 }
               >

@@ -11,7 +11,6 @@ const FavoriteRecipe = () => {
 
   const removeFromDb = (id) => {
     const findData = recipes.filter((rec) => rec._id !== id);
-    // delete findData[id];
     localStorage.setItem("recipe-info", JSON.stringify(findData));
   };
 
@@ -22,11 +21,15 @@ const FavoriteRecipe = () => {
       <div>
         {recipes?.map((recipe) => (
           <div
-            className="bg-gray-300 p-5 mb-3 rounded-md w-full lg:w-1/2 mx-auto"
+            className="bg-gray-300 p-5 mb-3 rounded-md w-full lg:w-3/4 mx-auto"
             key={recipe?._id}
           >
             <div className="flex flex-col md:flex-row gap-7 items-center">
-              <img className="w-1/3" src={recipe?.recipe_picture} alt="" />
+              <img
+                className="w-1/2 md:w-1/3"
+                src={recipe?.recipe_picture}
+                alt=""
+              />
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-3">
                   {recipe?.chef_name}
