@@ -1,4 +1,4 @@
-# b7a10-chef-recipe-hunter-client-side-masumbillah99
+# Chef Master Food Recipe
 
 Chef Master Food Recipe is a single page web application. Where we add firebase authentication system & some new tools.
 
@@ -30,7 +30,7 @@ Client side link hosted in Firebase -> https://chef-recipe-hunter-ass-10.web.app
 
 # Contributors
 
-<img src="https://raw.githubusercontent.com/Porgramming-Hero-web-course/b7a9-career-hub-masumbillah99/main/src/assets/All%20Images/profile.png?token=GHSAT0AAAAAAB3DEJ4XQWG6IXZLNUC5UHY6ZCSQKNQ" width="100">
+<img src="https://i.ibb.co/vCNpxDB/person-2.png" width="100">
 
 # Connect with me
 
