@@ -26,7 +26,7 @@ Chef Master Food Recipe is a single page web application. Where we add firebase 
 
 Server link hosted in Vercel -> https://chef-recipe-server-ass-10-masumbillah99.vercel.app
 
-Client side link hosted in Firebase -> https://chef-recipe-hunter-ass-10.web.app
+Live side link hosted in Firebase -> https://chef-recipe-hunter-ass-10.web.app
 
 # Contributors
 
